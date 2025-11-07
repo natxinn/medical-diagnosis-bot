@@ -90,11 +90,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     letter_count = len(case['diagnosis'])
     
     welcome_text = f"""
-🏥 WEEKLY DIAGNOSIS WORDLE 🏥
+🏥 *WEEKLY DIAGNOSIS WORDLE* 🏥
 
 {case['case_text']}
 
-🎯 GUESS THE DIAGNOSIS!
+🎯 *GUESS THE DIAGNOSIS!*
 • This week's answer has {letter_count} letters
 • You have 6 attempts
 • Type the full diagnosis name
@@ -103,10 +103,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 📊 Use /leaderboard to see weekly rankings!
 /help to find out how to play!
+
 Enter your first guess:
     """
     
-    await update.message.reply_text(welcome_text)
+    await update.message.reply_text(welcome_text, parse_mode='Markdown')
 
 async def handle_guess(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
@@ -124,7 +125,7 @@ async def handle_guess(update: Update, context: ContextTypes.DEFAULT_TYPE):
     feedback = evaluate_guess(guess, game['diagnosis'])
     
     result_text = f"""
-🎯 Attempt {game['attempts']}/6
+🎯 *Attempt {game['attempts']}/6*
 
 Your guess: {guess}
 Feedback: {feedback}
@@ -135,9 +136,9 @@ Feedback: {feedback}
         update_leaderboard(user_id, user.username or user.first_name, game['attempts'], won=True)
         
         victory_text = f"""
-🎉 CONGRATULATIONS! 🎉
+🎉 *CONGRATULATIONS!* 🎉
 
-You correctly diagnosed: {game['diagnosis']}
+You correctly diagnosed: *{game['diagnosis']}*
 Attempts: {game['attempts']}/6
 
 🏆 Added to weekly leaderboard!
@@ -146,23 +147,23 @@ Use /leaderboard to see rankings.
 Next case in 7 days!
         """
         del user_games[user_id]
-        await update.message.reply_text(victory_text)
+        await update.message.reply_text(victory_text, parse_mode='Markdown')
     
     elif game['attempts'] >= 6:
         update_leaderboard(user_id, user.username or user.first_name, game['attempts'], won=False)
         
         game_over_text = f"""
-💡 GAME OVER
+💡 *GAME OVER*
 
-The correct diagnosis was: {game['diagnosis']}
+The correct diagnosis was: *{game['diagnosis']}*
 
 Better luck next week! New case in 7 days.
         """
         del user_games[user_id]
-        await update.message.reply_text(game_over_text)
+        await update.message.reply_text(game_over_text, parse_mode='Markdown')
     
     else:
-        await update.message.reply_text(result_text)
+        await update.message.reply_text(result_text, parse_mode='Markdown')
 
 async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Show weekly leaderboard"""
@@ -181,7 +182,7 @@ async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         key=lambda x: (x[1]['attempts'] if x[1]['won'] else 999, x[1]['timestamp'])
     )
     
-    leaderboard_text = "🏆 WEEKLY LEADERBOARD 🏆\n\n"
+    leaderboard_text = "🏆 *WEEKLY LEADERBOARD* 🏆\n\n"
     
     for i, (user_id, data) in enumerate(sorted_players[:10], 1):  # Top 10
         status = "✅" if data['won'] else "❌"
@@ -195,9 +196,9 @@ async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
-🆘 WEEKLY DIAGNOSIS WORDLE - HELP
+🆘 *WEEKLY DIAGNOSIS WORDLE - HELP*
 
-🎮 HOW TO PLAY:
+🎮 *HOW TO PLAY*:
 1. Use /start to begin weekly case
 2. Read the medical case presentation
 3. Guess the full diagnosis name
@@ -205,24 +206,24 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 5. Get color feedback on your guess
 6. You have 6 attempts
 
-🎯 COLOR MEANING:
+🎯 *COLOR MEANING*:
 🟩 = Correct letter in correct position
 🟨 = Correct letter in wrong position  
 🟥 = Incorrect letter
 
-📏 ANSWER LENGTH:
+📏 *ANSWER LENGTH*:
 • Each week shows how many letters in the answer
 
-🏆 LEADERBOARD:
+🏆 *LEADERBOARD*:
 • Use /leaderboard to see rankings
 • Fewer attempts = better ranking
 • Resets every week
 
-🔄 WEEKLY RESET:
+🔄 *WEEKLY RESET*:
 • New case every Monday
 • Same case for all players all week
     """
-    await update.message.reply_text(help_text)
+    await update.message.reply_text(help_text, parse_mode='Markdown')
 
 def main():
     if not BOT_TOKEN:
@@ -241,4 +242,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
