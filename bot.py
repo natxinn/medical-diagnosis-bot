@@ -102,7 +102,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 • Get color feedback: 🟩🟨🟥
 
 📊 Use /leaderboard to see weekly rankings!
-
+/help to find out how to play!
 Enter your first guess:
     """
     
@@ -241,3 +241,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
