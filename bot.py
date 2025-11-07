@@ -90,7 +90,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     letter_count = len(case['diagnosis'])
     
     welcome_text = f"""
-🏥 *WEEKLY DIAGNOSIS WORDLE* 🏥
+🏥 *WEEKLY CLINICLE CASE* 🏥
 
 {case['case_text']}
 
@@ -196,7 +196,7 @@ async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
-🆘 *WEEKLY DIAGNOSIS WORDLE - HELP*
+🆘 *WEEKLY CLINICLE CASE - HELP*
 
 🎮 *HOW TO PLAY*:
 1. Use /start to begin weekly case
@@ -242,3 +242,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
