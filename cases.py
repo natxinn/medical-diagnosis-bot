@@ -57,6 +57,37 @@ MEDICAL_CASES = {
 • Urine WBC: >100 /HPF (Ref: 0-5)
 • Urine Nitrite: Positive (Ref: Negative)
         """
+    },
+    "lymphangitis": {
+        "diagnosis": "LYMPHANGITIS",
+        "case_text": """
+👨 *CASE*: A 24-year-old male gardener presents with a red, tender streak moving up his forearm from a small cut on his hand. He reports feeling generally unwell and feverish.
+
+📊 *VITALS*: T 38.8°C, HR 108, BP 125/80, RR 18, SpO2 99%
+
+🔍 *PHYSICAL EXAM*: A tender, linear red streak is visible from a minor abrasion on the dorsum of the hand, extending proximally towards the axilla. The surrounding skin is swollen and warm.
+
+💉 *LABS*:
+• WBC: 15.1 x10⁹/L (Ref: 4.0-11.0)
+• CRP: 65 mg/L (Ref: < 5.0)
+• Blood Test: "Specimens sent for culture are pending."
+        """
+    },
+    "epididymitis": {
+        "diagnosis": "EPIDIDYMITIS",
+        "case_text": """
+👨 *CASE*: A 35-year-old male presents with pain and swelling in the scrotum that has gradually worsened over the past day. He reports discomfort with urination and noted a clear discharge from his penis a few days prior.
+
+📊 *VITALS*: T 38.5°C, HR 102, BP 118/75, RR 16, SpO2 99%
+
+🔍 *PHYSICAL EXAM*: The left side of the scrotum is swollen, tender, and warm to the touch. Elevating the scrotum provides mild relief of the pain.
+
+💉 *LABS*:
+• WBC: 13.8 x10⁹/L (Ref: 4.0-11.0)
+• Urinalysis: 20-30 WBC/HPF (Ref: 0-5)
+• Specific Test: "A nucleic acid amplification test was positive for a common intracellular pathogen."
+        """
     }
 }
+
 
