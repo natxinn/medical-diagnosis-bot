@@ -1,34 +1,20 @@
 # cases.py - Your medical cases
 MEDICAL_CASES = {
-    "cholecystitis": {
-        "diagnosis": "CHOLECYSTITIS",
+    "malaria": {
+        "diagnosis": "MALARIA",
         "case_text": """
-👩 *CASE*: A 40-year-old female presents with constant, severe upper right belly pain that started a few hours after a heavy meal. The pain shoots through to her right upper back.
+👨 *CASE*: A 28-year-old humanitarian aid worker presents with recurrent high fevers and debilitating fatigue for four days. The fever episodes last several hours, accompanied by shaking chills and a severe headache, before breaking with profuse sweating.
 
-📊 *VITALS*: T 38.5°C, HR 105
+📊 *VITALS*: T 39.8°C, HR 118, BP 105/65
 
-🔍 *PHYSICAL EXAM*: Patient winces and holds her breath when the doctor presses deeply under the right rib cage.
+🔍 *PHYSICAL EXAM*: Patient appears acutely ill and moderately pale. Mild tenderness is noted in the upper left abdomen.
 
 💉 *LABS*:
-• WBC: 13.2 x10⁹/L (Ref: 4.0-11.0)
-• AST: 68 U/L (Ref: 10-40)
-• ALT: 72 U/L (Ref: 7-55)
-        """
-        
-    },
-    "nephrolithiasis": {
-        "diagnosis": "NEPHROLITHIASIS",
-        "case_text": """
-👨 *CASE*: A 50-year-old male with hypertension presents with intense right-sided abdominal pain that comes in waves, causing nausea. He describes a persistent urge to urinate but can only pass small amounts.
-
-📊 *VITALS*: T 37.9°C, HR 105, BP 142/88, RR 20, SpO2 99%
-
-🔍 *PHYSICAL EXAM*: Patient is restless. There is mild tenderness in the right lower quadrant, but no guarding. The right flank is mildly tender to percussion.
-
-💉 *LABS*:
-• Urinalysis: Specific Gravity 1.030 (Ref: 1.005-1.030), 10-15 RBC/HPF (Ref: 0-2), No bacteria
-• WBC: 11.8 x10⁹/L (Ref: 4.0-11.0)
-• Imaging Note: "Bedside ultrasound shows asymmetry with fullness of the right renal collecting system."
+- Hemoglobin 10.8 g/dL (Ref: 13.5-17.5)
+- Platelets 92 x10⁹/L (Ref: 150-400)
+- Total Bilirubin 2.8 mg/dL (Ref: 0.2-1.2) 
+- Creatinine 1.4 mg/dL (Ref: 0.7-1.3)
+- A microscopic blood test is sent for analysis.
         """
     }
 }
