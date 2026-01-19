@@ -124,7 +124,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 • NOT case sensitive - "diabetes" works!
 • Get color feedback: 🟩🟨🟥
 
-📊 Use /leaderboard to see weekly rankings!
+📊 Use /leaderboard to see case rankings!
 /help to find out how to play!
 
 Enter your first guess:
@@ -164,10 +164,9 @@ Feedback: {feedback}
 You correctly diagnosed: *{game['diagnosis']}*
 Attempts: {game['attempts']}/6
 
-🏆 Added to weekly leaderboard!
+🏆 Added to the leaderboard!
 Use /leaderboard to see rankings.
 
-Next case in 7 days!
         """
         del user_games[user_id]
         await update.message.reply_text(victory_text, parse_mode='Markdown')
@@ -180,7 +179,7 @@ Next case in 7 days!
 
 The correct diagnosis was: *{game['diagnosis']}*
 
-Better luck next week! New case in 7 days.
+Better luck next time! 
         """
         del user_games[user_id]
         await update.message.reply_text(game_over_text, parse_mode='Markdown')
@@ -208,7 +207,7 @@ async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         key=lambda x: (x[1]['attempts'] if x[1]['won'] else 999, x[1]['timestamp'])
     )
     
-    leaderboard_text = f"🏆 *WEEKLY LEADERBOARD* 🏆\n"
+    leaderboard_text = f"🏆 *LEADERBOARD* 🏆\n"
     leaderboard_text += f"*Week starting {start_of_week.strftime('%b %d')}*\n\n"
     
     for i, (user_id, data) in enumerate(sorted_players[:10], 1):  # Top 10
@@ -217,16 +216,16 @@ async def leaderboard_command(update: Update, context: ContextTypes.DEFAULT_TYPE
         leaderboard_text += f"{i}. {username} {status}\n"
         leaderboard_text += f"   Attempts: {data['attempts']}/6\n\n"
     
-    leaderboard_text += "🔄 Resets every Monday"
+    leaderboard_text += "🔄 Resets after every case"
     
     await update.message.reply_text(leaderboard_text)
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
-🆘 *WEEKLY CLINICLE CASE - HELP*
+🆘 *BIWEEKLY CLINICLE CASE - HELP*
 
 🎮 *HOW TO PLAY*:
-1. Use /start to begin weekly case
+1. Use /start to begin case
 2. Read the medical case presentation
 3. Guess the full diagnosis name
 4. NOT case sensitive - type naturally!
@@ -244,10 +243,10 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 🏆 *LEADERBOARD*:
 • Use /leaderboard to see rankings
 • Fewer attempts = better ranking
-• Resets every week
+• Resets every 2 weeks
 
-🔄 *WEEKLY RESET*:
-• New case every Monday
+🔄 *BIWEEKLY RESET*:
+• New case drops on Monday
 • Same case for all players all week
     """
     await update.message.reply_text(help_text, parse_mode='Markdown')
@@ -271,3 +270,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
