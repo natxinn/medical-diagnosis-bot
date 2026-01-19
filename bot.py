@@ -113,12 +113,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     letter_count = len(case['diagnosis'])
     
     welcome_text = f"""
-🏥 *WEEKLY CLINICLE CASE* 🏥
+🏥 *BIWEEKLY CLINICLE CASE* 🏥
 
 {case['case_text']}
 
 🎯 *GUESS THE DIAGNOSIS!*
-• This week's answer has {letter_count} letters
+• The answer has {letter_count} letters
 • You have 6 attempts
 • Type the full diagnosis name
 • NOT case sensitive - "diabetes" works!
@@ -270,4 +270,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
