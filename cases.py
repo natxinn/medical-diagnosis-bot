@@ -14,7 +14,8 @@ MEDICAL_CASES = {
 - Platelets 92 x10⁹/L (Ref: 150-400)
 - Total Bilirubin 2.8 mg/dL (Ref: 0.2-1.2) 
 - Creatinine 1.4 mg/dL (Ref: 0.7-1.3)
-- A microscopic blood test is sent for analysis.
+- A Giemsa-stained peripheral blood film is done. 
         """
     }
 }
+
