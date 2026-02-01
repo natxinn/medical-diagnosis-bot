@@ -238,7 +238,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 🟥 = Incorrect letter
 
 📏 *ANSWER LENGTH*:
-• Each week shows how many letters in the answer
+• Each case shows how many letters in the answer
 
 🏆 *LEADERBOARD*:
 • Use /leaderboard to see rankings
@@ -270,5 +270,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
