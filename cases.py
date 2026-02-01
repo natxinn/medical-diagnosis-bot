@@ -1,21 +1,28 @@
 # cases.py - Your medical cases
 MEDICAL_CASES = {
-    "malaria": {
-        "diagnosis": "MALARIA",
+     "myxoedema": {
+        "diagnosis": "MYXOEDEMA",
         "case_text": """
-👨 *CASE*: A 28-year-old humanitarian aid worker presents with recurrent high fevers and debilitating fatigue for four days. The fever episodes last several hours, accompanied by shaking chills and a severe headache, before breaking with profuse sweating.
+👵 *CASE*: A 72-year-old woman is brought to the ED by her daughter after a week of worsening confusion, excessive lethargy and reduced oral intake. Over the past several weeks, she has complained of feeling unusually cold, persistently constipated, and progressively more fatigued as well. She has also developed a hoarse voice and has experienced unintentional weight gain despite a poor appetite.
 
-📊 *VITALS*: T 39.8°C, HR 118, BP 105/65
+📊 *VITALS*: 
+T: 35.2°C
+HR: 52 
+BP: 92/59 
+RR: 9 
+SpO2: 92% on RA
 
-🔍 *PHYSICAL EXAM*: Patient appears acutely ill and moderately pale. Mild tenderness is noted in the upper left abdomen.
+🔍 *PHYSICAL EXAM*: Patient appears obtunded, with an expressionless facies, periorbital edema, and dry, cool skin. Auscultation reveals distant heart sounds and bradycardia, while the neurological exam reveals general slow movements and delayed relaxation of deep tendon reflexes. There is notable non-pitting edema of the hands and feet.
 
 💉 *LABS*:
-- Hemoglobin 10.8 g/dL (Ref: 13.5-17.5)
-- Platelets 92 x10⁹/L (Ref: 150-400)
-- Total Bilirubin 2.8 mg/dL (Ref: 0.2-1.2) 
-- Creatinine 1.4 mg/dL (Ref: 0.7-1.3)
-- A Giemsa-stained peripheral blood film is done. 
+• Sodium: 128 mmol/L (Ref: 135-145)
+• pH: 7.31 (Refs: 7.35-7.45)
+• pCO₂: 52 mmHg (Refs: 35-45)
+• CK: 1420 IU/L (Ref: <200)
+
+📷 *IMAGING (CXR)*: Cardiomegaly with small, bilateral pleural effusions.
         """
     }
 }
+
 
